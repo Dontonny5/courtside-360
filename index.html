@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>NBA Central</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1 id="home">Welcome to NBA Central</h1>
+
+    <p>Your home for everything NBA!</p>
+    <nav>
+    <a href="#home">HOME</a>
+    <a href="#teams">TEAMS</a>
+    <a href="#players">PLAYERS</a>
+    <a href="#scores">SCORES</a>
+    <a href="#standings">STANDINGS</a>
+</nav>
+<img src="nba.jpg" alt="NBA Basketball" width="100%">
+<p id="last-updated">Last Updated: Waiting for data...</p>
+<p class="refresh-note">Standings automatically refresh every 5 minutes.</p>
+<input
+    type="text"
+    id="team-search"
+    placeholder="Search NBA teams, players, coaches..."
+    autocomplete="off"
+    >
+    <details>
+    <summary>🏀 Western Conference (15 Teams)</summary>
+<details>
+    <summary>🏔️ Northwest Division (5 Teams)</summary>
+<details class="team-card">
+    <summary>Minnesota Timberwolves 🐺</summary>
+
+    <p>Conference: Western</p>
+    <p>Division: Northwest</p>
+    <p>Home: Minneapolis</p>
+    <h4>Coaching Staff</h4>
+
+<h5>Head Coach</h5>
+<ul>
+    <li>Chris Finch</li>
+</ul>
+
+<h5>Assistant Coaches</h5>
+<ul>
+    <li>Pablo Prigioni</li>
+    <li>Elston Turner</li>
+</ul>
+    <h4>Team Roster</h4>
+
+<div id="wolves-roster">
+    <p>Loading roster...</p>
+</div>
+<h4>Injury Report 🏥</h4>
+
+<div id="wolves-injuries">
+    <p>Loading injury report...</p>
+</div>
+<h4>Western Conference Standings</h4>
+
+<div id="wolves-standings">
+    <p>Loading standings...</p>
+</div>
+</details>
+<div class="team-card">
+    <h3>Denver Nuggets</h3>
+    <p>Conference: Western</p>
+    <p>Division: Northwest</p>
+    <p>Home: Denver</p>
+</div>
+<div class="team-card">
+    <h3>Oklahoma City Thunder</h3>
+    <p>Conference: Western</p>
+    <p>Division: Northwest</p>
+    <p>Home: Oklahoma City</p>
+</div>
+<div class="team-card">
+    <h3>Portland Trail Blazers</h3>
+    <p>Conference: Western</p>
+    <p>Division: Northwest</p>
+    <p>Home: Portland</p>
+</div>
+<div class="team-card">
+    <h3>Utah Jazz</h3>
+    <p>Conference: Western</p>
+    <p>Division: Northwest</p>
+    <p>Home: Salt Lake City</p>
+</div>
+</details>
+<details>
+    <summary>🌊 Pacific Division (5 Teams)</summary>
+<div class="team-card">
+    <h3>Golden State Warriors</h3>
+    <p>Conference: Western</p>
+    <p>Division: Pacific</p>
+    <p>Home: San Francisco</p>
+</div>
+<div class="team-card">
+    <h3>Los Angeles Clippers</h3>
+    <p>Conference: Western</p>
+    <p>Division: Pacific</p>
+    <p>Home: Los Angeles</p>
+</div>
+<div class="team-card">
+    <h3>Los Angeles Lakers</h3>
+    <p>Conference: Western</p>
+    <p>Division: Pacific</p>
+    <p>Home: Los Angeles</p>
+</div>
+<div class="team-card">
+    <h3>Phoenix Suns</h3>
+    <p>Conference: Western</p>
+    <p>Division: Pacific</p>
+    <p>Home: Phoenix</p>
+</div>
+<div class="team-card">
+    <h3>Sacramento Kings</h3>
+    <p>Conference: Western</p>
+    <p>Division: Pacific</p>
+    <p>Home: Sacramento</p>
+</div>
+</details>
+<details>
+    <summary>⭐ Southwest Division (5 Teams)</summary>
+<div class="team-card">
+    <h3>Dallas Mavericks</h3>
+    <p>Conference: Western</p>
+    <p>Division: Southwest</p>
+    <p>Home: Dallas</p>
+</div>
+<div class="team-card">
+    <h3>Houston Rockets</h3>
+    <p>Conference: Western</p>
+    <p>Division: Southwest</p>
+    <p>Home: Houston</p>
+</div>
+<div class="team-card">
+    <h3>Memphis Grizzlies</h3>
+    <p>Conference: Western</p>
+    <p>Division: Southwest</p>
+    <p>Home: Memphis</p>
+</div>
+<div class="team-card">
+    <h3>New Orleans Pelicans</h3>
+    <p>Conference: Western</p>
+    <p>Division: Southwest</p>
+    <p>Home: New Orleans</p>
+</div>
+<div class="team-card">
+    <h3>San Antonio Spurs</h3>
+    <p>Conference: Western</p>
+    <p>Division: Southwest</p>
+    <p>Home: San Antonio</p>
+</div>
+</details>
+</details>
+<details>
+    <summary>🏀 Eastern Conference (15 Teams)</summary>
+<details>
+    <summary>🌆 Atlantic Division (5 Teams)</summary>
+<div class="team-card">
+    <h3>Boston Celtics</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Atlantic</p>
+    <p>Home: Boston</p>
+</div>
+<div class="team-card">
+    <h3>Brooklyn Nets</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Atlantic</p>
+    <p>Home: Brooklyn</p>
+</div>
+<div class="team-card">
+    <h3>New York Knicks</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Atlantic</p>
+    <p>Home: New York</p>
+</div>
+<div class="team-card">
+    <h3>Philadelphia 76ers</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Atlantic</p>
+    <p>Home: Philadelphia</p>
+</div>
+<div class="team-card">
+    <h3>Toronto Raptors</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Atlantic</p>
+    <p>Home: Toronto</p>
+</div>
+</details>
+<details>
+    <summary>🏙️ Central Division (5 Teams)</summary>
+<div class="team-card">
+    <h3>Chicago Bulls</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Central</p>
+    <p>Home: Chicago</p>
+</div>
+<div class="team-card">
+    <h3>Cleveland Cavaliers</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Central</p>
+    <p>Home: Cleveland</p>
+</div>
+<div class="team-card">
+    <h3>Detroit Pistons</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Central</p>
+    <p>Home: Detroit</p>
+</div>
+<div class="team-card">
+    <h3>Indiana Pacers</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Central</p>
+    <p>Home: Indianapolis</p>
+</div>
+<div class="team-card">
+    <h3>Milwaukee Bucks</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Central</p>
+    <p>Home: Milwaukee</p>
+</div>
+</details>
+<details>
+    <summary>🌴 Southeast Division (5 Teams)</summary>
+<div class="team-card">
+    <h3>Atlanta Hawks</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Southeast</p>
+    <p>Home: Atlanta</p>
+</div>
+<div class="team-card">
+    <h3>Charlotte Hornets</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Southeast</p>
+    <p>Home: Charlotte</p>
+</div>
+<div class="team-card">
+    <h3>Miami Heat</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Southeast</p>
+    <p>Home: Miami</p>
+</div>
+<div class="team-card">
+    <h3>Orlando Magic</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Southeast</p>
+    <p>Home: Orlando</p>
+</div>
+<div class="team-card">
+    <h3>Washington Wizards</h3>
+    <p>Conference: Eastern</p>
+    <p>Division: Southeast</p>
+    <p>Home: Washington, D.C.</p>
+</div>
+</details>
+</details>
+<h2 id="scores">Latest NBA Scores</h2>
+<div>
+    <details>
+    <summary>🏀 NBA Scoreboard (Click to view games)</summary>
+    <details>
+    <summary>🔴 Live Games (Click to view)</summary>
+    <div id="live-games">
+    <h4>🔴 Live Games</h4>
+</div>
+</details>
+<details>
+    <summary>📅 Upcoming Fixtures (Click to view)</summary>
+    <div id="upcoming-games">
+</div>
+</details>
+<details>
+    <summary>🏁 Past Results (Click to view)</summary>
+    <div id="past-games">
+</div>
+</details>
+</details>
+</div>
+<h2 id="standings">NBA Standings</h2>
+<h3>Western Conference</h3>
+<div class="playoff-legend">
+    <span class="legend-playoff">■ Playoff Positions (1–6)</span>
+    <span class="legend-playin">■ Play-In Positions (7–10)</span>
+</div>
+</div>
+<button id="refresh-button">Refresh Standings 🔄</button>
+<table id="west-standings">
+    <tr>
+        <th>RANK</th>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+        <th>PCT</th>
+        <th>GB</th>
+        <th>HOME</th>
+        <th>AWAY</th>
+        <th>DIV</th>
+        <th>CONF</th>
+        <th>PPG</th>
+        <th>OPP PPG</th>
+        <th>DIFF</th>
+        <th>STRK</th>
+        <th>L10</th>
+    </tr>
+    <tr>
+    <td>1</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/min.png" alt="Minnesota Timberwolves"> Minnesota Timberwolves</td>
+    <td>0</td>
+    <td>0</td>
+    <td>0.000</td>
+    <td>0</td>
+    <td>0-0</td>
+    <td>0-0</td>
+    <td>0-0</td>
+    <td>0-0</td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>0.0</td>
+    <td>—</td>
+    <td>0-0</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/den.png" alt="Denver Nuggets"> Denver Nuggets</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/okc.png" alt="Oklahoma City Thunder"> Oklahoma City Thunder</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/por.png" alt="Portland Trail Blazers"> Portland Trail Blazers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/utah.png" alt="Utah Jazz"> Utah Jazz</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/gs.png" alt="Golden State Warriors"> Golden State Warriors</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/lac.png" alt="LA Clippers"> LA Clippers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/lal.png" alt="Los Angeles Lakers"> Los Angeles Lakers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/phx.png" alt="Phoenix Suns"> Phoenix Suns</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/sac.png" alt="Sacramento Kings"> Sacramento Kings</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/dal.png" alt="Dallas Mavericks"> Dallas Mavericks</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>12</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/hou.png" alt="Houston Rockets"> Houston Rockets</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>13</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/mem.png" alt="Memphis Grizzlies"> Memphis Grizzlies</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>14</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/no.png" alt="New Orleans Pelicans"> New Orleans Pelicans</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>15</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/sa.png" alt="San Antonio Spurs"> San Antonio Spurs</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+</table>
+<h3>Eastern Conference</h3>
+<div class="playoff-legend">
+    <span class="legend-playoff">■ Playoff Positions (1–6)</span>
+    <span class="legend-playin">■ Play-In Positions (7–10)</span>
+</div>
+<table id="east-standings">
+    <tr>
+        <th>RANK</th>
+        <th>Team</th>
+        <th>W</th>
+        <th>L</th>
+        <th>PCT</th>
+        <th>GB</th>
+        <th>HOME</th>
+        <th>AWAY</th>
+        <th>DIV</th>
+        <th>CONF</th>
+        <th>PPG</th>
+        <th>OPP PPG</th>
+        <th>DIFF</th>
+        <th>STRK</th>
+        <th>L10</th>
+    </tr>
+    <tr>
+    <td>1</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/bos.png" alt="Boston Celtics"> Boston Celtics</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>2</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/bkn.png" alt="Brooklyn Nets"> Brooklyn Nets</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>3</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/ny.png" alt="New York Knicks"> New York Knicks</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>4</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/phi.png" alt="Philadelphia 76ers"> Philadelphia 76ers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>5</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/tor.png" alt="Toronto Raptors"> Toronto Raptors</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>6</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/chi.png" alt="Chicago Bulls"> Chicago Bulls</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>7</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/cle.png" alt="Cleveland Cavaliers"> Cleveland Cavaliers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>8</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/det.png" alt="Detroit Pistons"> Detroit Pistons</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>9</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/ind.png" alt="Indiana Pacers"> Indiana Pacers</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>10</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/mil.png" alt="Milwaukee Bucks"> Milwaukee Bucks</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>11</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/atl.png" alt="Atlanta Hawks"> Atlanta Hawks</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>12</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/cha.png" alt="Charlotte Hornets"> Charlotte Hornets</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>13</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/mia.png" alt="Miami Heat"> Miami Heat</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>14</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/orl.png" alt="Orlando Magic"> Orlando Magic</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+<tr>
+    <td>15</td>
+    <td><img class="team-logo" src="https://a.espncdn.com/i/teamlogos/nba/500/wsh.png" alt="Washington Wizards"> Washington Wizards</td>
+    <td>0</td><td>0</td><td>0.000</td><td>0</td>
+    <td>0-0</td><td>0-0</td><td>0-0</td><td>0-0</td>
+    <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
+</tr>
+</table>
+
+<div>
+    <h3>Welcome to the 2026 NBA Season</h3>
+    <p>Follow your favourite teams and players throughout the season.</p>
+</div>
+
+<div>
+    <h3>Player Spotlight</h3>
+    <p>Discover the biggest stars in basketball.</p>
+</div>
+
+<footer>
+    <p>© 2026 NBA Central. All Rights Reserved.</p>
+    <p>Made for basketball fans 🏀</p>
+    <section id="customer-support">
+    <h2>📞 Contact NBA Central</h2>
+    <p>Have questions, suggestions or feedback? Get in touch with us.</p>
+
+    <p>
+        📧 Email Support:
+        <a href="mailto:burudidonald2005@gmail.com">
+            Send us an Email
+        </a>
+    </p>
+
+    <p>
+        💬 WhatsApp Support:
+        <a href="https://wa.me/254791412622" target="_blank">
+            Chat with us on WhatsApp
+        </a>
+    </p>
+</section>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

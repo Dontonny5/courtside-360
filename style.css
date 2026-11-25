@@ -1,0 +1,482 @@
+body {
+    background-color: #111111;
+    color: white;
+    font-family: Arial, sans-serif;
+}h1 {
+    color: orange;
+    text-align: center;
+    font-size: 40px;
+}p {
+    text-align: center;
+    font-size: 20px;
+    color: lightgray;
+}body {
+    padding: 30px;
+}
+
+h1 {
+    margin-bottom: 20px;
+}nav {
+    text-align: center;
+    background-color: #222222;
+    padding: 15px;
+}
+
+nav a {
+    color: orange;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+h2 {
+    color: orange;
+    text-align: center;
+    margin-top: 40px;
+}
+
+div {
+    background-color: #222222;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+div p {
+    color: lightgray;
+    font-size: 16px;
+}img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-top: 20px;
+}footer {
+    background-color: #222222;
+    padding: 15px;
+    margin-top: 40px;
+    text-align: center;
+    border-top: 2px solid orange;
+}
+
+footer p {
+    font-size: 14px;
+    color: lightgray;
+}.team-card {
+    background-color: #1c2c50;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 12px;
+    max-width: 500px;
+    border: 2px solid orange;
+}
+
+.team-card h3 {
+    color: orange;
+    font-size: 24px;
+}
+
+.team-card p {
+    color: white;
+    font-size: 16px;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #222222;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+th {
+    background-color: orange;
+    color: black;
+    padding: 15px 10px;
+    text-align: center;
+}
+
+td {
+    padding: 12px 10px;
+    text-align: center;
+    border-bottom: 1px solid #444444;
+}
+
+tr:hover {
+    background-color: #333333;
+}
+tr:nth-child(even) {
+    background-color: #303030;
+}
+
+tr:nth-child(odd) {
+    background-color: #1c1c1c;
+}
+tr:nth-child(even) {
+    background-color: #303030;
+}
+
+tr:nth-child(odd) {
+    background-color: #1c1c1c;
+}
+.team-logo {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+td:first-child {
+    color: orange;
+    font-weight: bold;
+    font-size: 16px;
+}
+td:nth-child(2) {
+    text-align: left;
+    font-weight: bold;
+    white-space: nowrap;
+}
+table {
+    min-width: 1200px;
+}
+
+body {
+    overflow-x: auto;
+}
+/* Wins - Green */
+td:nth-child(3) {
+    color: #00e676;
+    font-weight: bold;
+}
+
+/* Losses - Red */
+td:nth-child(4) {
+    color: #ff5252;
+    font-weight: bold;
+}
+/* Winning Percentage */
+td:nth-child(5) {
+    color: #40c4ff;
+    font-weight: bold;
+}
+/* Point Difference */
+td:nth-child(13) {
+    font-weight: bold;
+}
+td:nth-child(2):hover {
+    color: orange;
+    cursor: pointer;
+    transform: scale(1.03);
+}
+#last-updated {
+    color: #00e676;
+    font-size: 14px;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+}
+.refresh-note {
+    color: lightgray;
+    font-size: 12px;
+    text-align: right;
+    margin-top: -10px;
+    font-style: italic;
+}
+#team-search {
+    width: 50%;
+    padding: 12px;
+    margin: 20px auto;
+    display: block;
+    border: 2px solid orange;
+    border-radius: 8px;
+    background-color: #222222;
+    color: white;
+    font-size: 16px;
+}
+/* Playoff positions */
+.playoff-team {
+    border-left: 5px solid #00e676;
+}
+
+/* Play-In positions */
+.playin-team {
+    border-left: 5px solid #ffeb3b;
+}
+.playoff-legend {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 14px;
+}
+
+.legend-playoff {
+    color: #00e676;
+    margin-right: 20px;
+}
+
+.legend-playin {
+    color: #ffeb3b;
+}
+#refresh-button {
+    display: block;
+    margin: 5px auto 20px;
+    padding: 12px 25px;
+    background-color: orange;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+#refresh-button:hover {
+    background-color: #ff8c00;
+    transform: scale(1.05);
+}
+/* NBA SCOREBOARD */
+
+#live-games,
+#upcoming-games,
+#past-games {
+    background: #18202b;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    color: white;
+}
+
+#live-games h4,
+#upcoming-games h4,
+#past-games h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+.game-card {
+    background: #263445;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    border-left: 4px solid #00a8ff;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.01);
+    background: #32465c;
+}
+
+.game-card h4 {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.game-card p {
+    font-size: 14px;
+    margin: 6px 0;
+}
+.game-card p:first-of-type {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.game-card p:last-of-type {
+    color: #aebdce;
+    font-size: 13px;
+}
+#live-games h4 {
+    color: #ff4545;
+}
+
+#upcoming-games h4 {
+    color: #00a8ff;
+}
+
+#past-games h4 {
+    color: #00d68f;
+}
+.team-info img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.team-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.team-info div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.team-info h3 {
+    font-size: 20px;
+    white-space: nowrap;
+}
+.live-game {
+    border-left: 5px solid #ff3333;
+    box-shadow: 0 0 10px rgba(255, 51, 51, 0.2);
+}
+
+.live-game:hover {
+    border-left: 5px solid #ff0000;
+}
+.live-badge {
+    display: inline-block;
+    background: #ff3333;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    animation: livePulse 1.5s infinite;
+}
+
+@keyframes livePulse {
+    50% {
+        opacity: 0.5;
+    }
+}
+/* COLLAPSIBLE SCOREBOARD */
+
+details summary {
+    background: #18202b;
+    color: white;
+    padding: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+details summary:hover {
+    background: #263445;
+}
+
+details[open] summary {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+#wolves-injuries li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #333;
+color: white;
+    border-radius: 8px;
+}
+
+#wolves-injuries li p {
+    margin-top: 5px;
+    font-size: 14px;
+}
+.injury-status.out {
+    color: red;
+    font-weight: bold;
+}
+.injury-status.day-to-day {
+    color: orange;
+    font-weight: bold;
+}
+.injury-status.questionable {
+    color: yellow;
+    font-weight: bold;
+}
+.highlight-thumbnail {
+    width: 100%;
+    max-width: 450px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+    margin: 15px 0;
+    transition: 0.3s;
+}
+
+.highlight-thumbnail:hover {
+    transform: scale(1.02);
+}
+}
+
+.game-card a {
+    display: inline-block;
+    color: #00aaff;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+.game-recap {
+    background: #292929;
+    padding: 12px;
+    border-left: 4px solid #00aaff;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: white;
+    margin-top: 10px;
+}
+#wolves-standings {
+    width: 100%;
+    max-width: 700px;
+    overflow-x: auto;
+    box-sizing: border-box;
+}
+
+#wolves-standings table {
+    width: 100%;
+    min-width: 400px;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-size: 13px;
+}
+
+#wolves-standings th,
+#wolves-standings td {
+    padding: 8px 5px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+    color: white;
+}
+
+#wolves-standings th {
+    background: #222;
+}
+
+#wolves-standings tr:nth-child(even) {
+    background: #333;
+}
+
+#wolves-standings th:nth-child(2),
+#wolves-standings td:nth-child(2) {
+    width: 65%;
+    text-align: left;
+}
+.past-game {
+    background: #17212d;
+    border-left: 4px solid #f5a623;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 12px;
+}
+.game-card a {
+    display: inline-block;
+    background: #00a8ff;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.game-card a:hover {
+    background: #0077b6;
+}
