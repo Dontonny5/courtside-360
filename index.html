@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="google-site-verification" content="gje62k8Y7MArGzWde3crhdVKYDurm8-H86kHU6qFN8A" />
     <title>NBA Central</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -31,100 +30,16 @@
     <summary>🏀 Western Conference (15 Teams)</summary>
 <details>
     <summary>🏔️ Northwest Division (5 Teams)</summary>
-<details class="team-card">
-    <summary>Minnesota Timberwolves 🐺</summary>
+    <div id="northwest-teams"></div>
 
-    <p>Conference: Western</p>
-    <p>Division: Northwest</p>
-    <p>Home: Minneapolis</p>
-    <h4>Coaching Staff</h4>
-
-<h5>Head Coach</h5>
-<ul>
-    <li>Chris Finch</li>
-</ul>
-
-<h5>Assistant Coaches</h5>
-<ul>
-    <li>Pablo Prigioni</li>
-    <li>Elston Turner</li>
-</ul>
-    <h4>Team Roster</h4>
-
-<div id="wolves-roster">
-    <p>Loading roster...</p>
-</div>
-<h4>Injury Report 🏥</h4>
-
-<div id="wolves-injuries">
-    <p>Loading injury report...</p>
-</div>
-<h4>Western Conference Standings</h4>
-
-<div id="wolves-standings">
-    <p>Loading standings...</p>
-</div>
-</details>
-<div class="team-card">
-    <h3>Denver Nuggets</h3>
-    <p>Conference: Western</p>
-    <p>Division: Northwest</p>
-    <p>Home: Denver</p>
-</div>
-<div class="team-card">
-    <h3>Oklahoma City Thunder</h3>
-    <p>Conference: Western</p>
-    <p>Division: Northwest</p>
-    <p>Home: Oklahoma City</p>
-</div>
-<div class="team-card">
-    <h3>Portland Trail Blazers</h3>
-    <p>Conference: Western</p>
-    <p>Division: Northwest</p>
-    <p>Home: Portland</p>
-</div>
-<div class="team-card">
-    <h3>Utah Jazz</h3>
-    <p>Conference: Western</p>
-    <p>Division: Northwest</p>
-    <p>Home: Salt Lake City</p>
-</div>
 </details>
 <details>
     <summary>🌊 Pacific Division (5 Teams)</summary>
-<div class="team-card">
-    <h3>Golden State Warriors</h3>
-    <p>Conference: Western</p>
-    <p>Division: Pacific</p>
-    <p>Home: San Francisco</p>
-</div>
-<div class="team-card">
-    <h3>Los Angeles Clippers</h3>
-    <p>Conference: Western</p>
-    <p>Division: Pacific</p>
-    <p>Home: Los Angeles</p>
-</div>
-<div class="team-card">
-    <h3>Los Angeles Lakers</h3>
-    <p>Conference: Western</p>
-    <p>Division: Pacific</p>
-    <p>Home: Los Angeles</p>
-</div>
-<div class="team-card">
-    <h3>Phoenix Suns</h3>
-    <p>Conference: Western</p>
-    <p>Division: Pacific</p>
-    <p>Home: Phoenix</p>
-</div>
-<div class="team-card">
-    <h3>Sacramento Kings</h3>
-    <p>Conference: Western</p>
-    <p>Division: Pacific</p>
-    <p>Home: Sacramento</p>
-</div>
+    <div id="pacific-teams"></div>
 </details>
 <details>
     <summary>⭐ Southwest Division (5 Teams)</summary>
+    <div id="southwest-teams"></div>
 <div class="team-card">
     <h3>Dallas Mavericks</h3>
     <p>Conference: Western</p>
@@ -161,6 +76,7 @@
     <summary>🏀 Eastern Conference (15 Teams)</summary>
 <details>
     <summary>🌆 Atlantic Division (5 Teams)</summary>
+    <div id="atlantic-teams"></div>F
 <div class="team-card">
     <h3>Boston Celtics</h3>
     <p>Conference: Eastern</p>
@@ -194,6 +110,7 @@
 </details>
 <details>
     <summary>🏙️ Central Division (5 Teams)</summary>
+    <div id="central-teams"></div>
 <div class="team-card">
     <h3>Chicago Bulls</h3>
     <p>Conference: Eastern</p>
@@ -227,36 +144,7 @@
 </details>
 <details>
     <summary>🌴 Southeast Division (5 Teams)</summary>
-<div class="team-card">
-    <h3>Atlanta Hawks</h3>
-    <p>Conference: Eastern</p>
-    <p>Division: Southeast</p>
-    <p>Home: Atlanta</p>
-</div>
-<div class="team-card">
-    <h3>Charlotte Hornets</h3>
-    <p>Conference: Eastern</p>
-    <p>Division: Southeast</p>
-    <p>Home: Charlotte</p>
-</div>
-<div class="team-card">
-    <h3>Miami Heat</h3>
-    <p>Conference: Eastern</p>
-    <p>Division: Southeast</p>
-    <p>Home: Miami</p>
-</div>
-<div class="team-card">
-    <h3>Orlando Magic</h3>
-    <p>Conference: Eastern</p>
-    <p>Division: Southeast</p>
-    <p>Home: Orlando</p>
-</div>
-<div class="team-card">
-    <h3>Washington Wizards</h3>
-    <p>Conference: Eastern</p>
-    <p>Division: Southeast</p>
-    <p>Home: Washington, D.C.</p>
-</div>
+    <div id="southeast-teams"></div>
 </details>
 </details>
 <h2 id="scores">Latest NBA Scores</h2>
@@ -289,7 +177,9 @@
 </div>
 </div>
 <button id="refresh-button">Refresh Standings 🔄</button>
-<table id="west-standings">
+<details>
+    <summary>🏀 Western Conference Standings</summary>
+    <table id="west-standings">
     <tr>
         <th>RANK</th>
         <th>Team</th>
@@ -423,12 +313,15 @@
     <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
 </tr>
 </table>
+</details>
 <h3>Eastern Conference</h3>
 <div class="playoff-legend">
     <span class="legend-playoff">■ Playoff Positions (1–6)</span>
     <span class="legend-playin">■ Play-In Positions (7–10)</span>
 </div>
-<table id="east-standings">
+<details>
+    <summary>🏀 Eastern Conference Standings</summary>
+    <table id="east-standings">
     <tr>
         <th>RANK</th>
         <th>Team</th>
@@ -552,7 +445,7 @@
     <td>0.0</td><td>0.0</td><td>0.0</td><td>—</td><td>0-0</td>
 </tr>
 </table>
-
+</details>
 <div>
     <h3>Welcome to the 2026 NBA Season</h3>
     <p>Follow your favourite teams and players throughout the season.</p>
