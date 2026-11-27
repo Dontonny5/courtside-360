@@ -465,6 +465,36 @@ Promise.all(
         .flatMap(result => result.events || [])
         .filter(game => game.status.type.state === "post");
 console.log("Video Details:", historicalGames[0].competitions[0].headlines[0].video[0]);
+
+console.log("Video link:", historicalGames[0].competitions[0].headlines[0].video[0].links);
+const gameVideos = historicalGames.flatMap(game =>
+    game.competitions?.[0]?.headlines?.[0]?.video || []
+);
+
+const videosContainer = document.getElementById("videos-container");
+
+videosContainer.innerHTML = "";
+
+gameVideos.slice(0, 8).forEach(video => {
+
+    videosContainer.innerHTML += `
+        <div class="headline-card">
+
+            <img src="${video.thumbnail}" alt="NBA Highlights">
+
+            <h3>${video.headline}</h3>
+
+            <p>Duration: ${video.duration} seconds</p>
+
+            <a href="${video.links.web.href}" target="_blank">
+                WATCH HIGHLIGHTS
+            </a>
+
+        </div>
+    `;
+
+});
+
     historicalGames.sort((a, b) =>
         new Date(b.date) - new Date(a.date)
     );
@@ -823,3 +853,426 @@ function refreshTeamInjuries() {
 refreshTeamInjuries();
 
 setInterval(refreshTeamInjuries, 300000);
+// COURTSIDE 360 - NBA HEADLINES
+
+function loadNBAHeadlines() {
+
+    fetch("https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=30")
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            const articles = data.articles;
+
+            if (!articles || articles.length === 0) {
+                throw new Error("No news available");
+            }
+
+            // FILTER NBA STORIES
+
+            const nbaArticles = articles.filter(article => {
+
+                const hasNBACategory = article.categories?.some(category =>
+                    category.description?.toLowerCase() === "nba"
+                );
+
+                const headline = article.headline?.toLowerCase() || "";
+
+                const isBasketballStory =
+                    headline.includes("nba") ||
+                    headline.includes("basketball") ||
+                    headline.includes("timberwolves") ||
+                    headline.includes("warriors") ||
+                    headline.includes("lakers") ||
+                    headline.includes("celtics") ||
+                    headline.includes("bucks") ||
+                    headline.includes("knicks") ||
+                    headline.includes("heat") ||
+                    headline.includes("76ers") ||
+                    headline.includes("suns") ||
+                    headline.includes("spurs") ||
+                    headline.includes("clippers") ||
+                    headline.includes("nuggets") ||
+                    headline.includes("mavericks") ||
+                    headline.includes("hawks") ||
+                    headline.includes("bulls") ||
+                    headline.includes("rockets") ||
+                    headline.includes("grizzlies") ||
+                    headline.includes("pelicans") ||
+                    headline.includes("nets") ||
+                    headline.includes("pistons") ||
+                    headline.includes("raptors") ||
+                    headline.includes("magic") ||
+                    headline.includes("cavaliers") ||
+                    headline.includes("wizards") ||
+                    headline.includes("hornets") ||
+                    headline.includes("kings") ||
+                    headline.includes("thunder") ||
+                    headline.includes("trail blazers") ||
+                    headline.includes("pacers") ||
+                    headline.includes("jazz");
+
+                return hasNBACategory && isBasketballStory;
+
+            });
+
+            if (nbaArticles.length === 0) {
+                throw new Error("No NBA articles found");
+            }
+
+            // FEATURED STORY
+
+            const featured = nbaArticles[0];
+
+            const featuredImage = featured.images?.[0]?.url || "";
+
+            document.getElementById("featured-headline").innerHTML = `
+                <img src="${featuredImage}" alt="NBA News"
+                     style="width:100%; max-height:350px; object-fit:cover;">
+
+                <h3>${featured.headline}</h3>
+
+                <p>${featured.description || ""}</p>
+
+                <a href="${featured.links?.web?.href || "#"}"
+                   target="_blank">READ FULL STORY</a>
+            `;
+
+            // LATEST NBA HEADLINES
+
+            document.getElementById("headlines-container").innerHTML = "";
+
+            nbaArticles.slice(1, 30).forEach(article => {
+
+                const image = article.images?.[0]?.url || "";
+
+                document.getElementById("headlines-container").innerHTML += `
+                    <div class="headline-card">
+
+                        <img src="${image}" alt="NBA News">
+
+                        <h3>${article.headline}</h3>
+
+                        <p>${article.description || ""}</p>
+
+                        <a href="${article.links?.web?.href || "#"}"
+                           target="_blank">READ MORE</a>
+
+                    </div>
+                `;
+
+            });
+
+            // TOP NBA HEADLINES
+
+            const topContainer = document.getElementById("top-headlines-container");
+
+            topContainer.innerHTML = "";
+
+            nbaArticles.slice(0, 6).forEach((article, index) => {
+
+                topContainer.innerHTML += `
+                    <div class="headline-card">
+
+                        <h3>${index + 1}. ${article.headline}</h3>
+
+                        <p>${article.description || ""}</p>
+
+                        <a href="${article.links?.web?.href || "#"}"
+                           target="_blank">READ STORY</a>
+
+                    </div>
+                `;
+
+            });
+
+        })
+
+        .catch(error => {
+
+            console.log("Error loading NBA headlines:", error);
+
+            document.getElementById("featured-headline").innerHTML =
+                "<p>Unable to load NBA headlines.</p>";
+
+            document.getElementById("headlines-container").innerHTML =
+                "<p>NBA headlines unavailable.</p>";
+
+            document.getElementById("top-headlines-container").innerHTML =
+                "<p>Top headlines unavailable.</p>";
+
+        });
+
+}
+
+loadNBAHeadlines();
+
+setInterval(loadNBAHeadlines, 300000);
+// COURTSIDE 360 - COLLAPSIBLE NAVIGATION
+
+const menuButton = document.getElementById("menu-button");
+const navigation = document.getElementById("main-navigation");
+
+menuButton.addEventListener("click", function() {
+
+    if (navigation.style.display === "block") {
+        navigation.style.display = "none";
+    } else {
+        navigation.style.display = "block";
+    }
+
+});
+
+// CLOSE MENU AFTER CLICKING A LINK
+
+// CONTROL WEBSITE PAGES THROUGH NAVIGATION
+
+const navigationLinks = navigation.querySelectorAll("a");
+
+const websitePages = [
+    "home-page",
+    "teams",
+    "players-page",
+    "scores-page",
+    "standings-page"
+];
+
+// Show HOME when the website opens
+document.getElementById("home-page").style.display = "block";
+
+navigationLinks.forEach(function(link) {
+
+    link.addEventListener("click", function() {
+
+        navigation.style.display = "none";
+
+        const pageId = {
+            "#home": "home-page",
+            "#teams": "teams",
+            "#players": "players-page",
+            "#scores": "scores-page",
+            "#standings": "standings-page"
+        }[link.getAttribute("href")];
+
+        if (pageId) {
+
+            websitePages.forEach(function(page) {
+                document.getElementById(page).style.display = "none";
+            });
+
+            document.getElementById(pageId).style.display = "block";
+
+        }
+
+    });
+
+});
+
+// COURTSIDE 360 - NBA PLAYER STATISTICS
+
+let allPlayers = [];
+let allRosterPlayers = [];
+// LOAD ALL 30 NBA TEAM ROSTERS
+
+async function loadAllTeamRosters() {
+
+    for (const team of nbaTeams) {
+
+        const url = `https://site.api.espn.com/apis/site/v2/sports/basketball/nba/teams/${team.id}/roster`;
+
+        const response = await fetch(url);
+
+        const data = await response.json();
+
+        allRosterPlayers.push(
+    ...data.athletes.map(player => ({
+        ...player,
+        teamId: String(team.id),
+        teamName: team.name
+    }))
+);
+
+    }
+const teamFilter = document.getElementById("team-filter");
+
+nbaTeams.forEach(team => {
+
+    const option = document.createElement("option");
+
+    option.value = String(team.id);
+    option.textContent = team.name;
+
+    teamFilter.appendChild(option);
+
+});
+    console.log("TOTAL ROSTER PLAYERS:", allRosterPlayers.length);
+allRosterPlayers = allRosterPlayers.map(player => {
+
+    const stats = allPlayers.find(
+        item => item.athlete.id === player.id
+    );
+
+    return {
+        ...player,
+        stats: stats || null
+    };
+
+});
+}
+// LOAD ALL NBA PLAYER STATISTICS
+
+async function loadAllNBAPlayers() {
+    try {
+        let url = "https://site.web.api.espn.com/apis/common/v3/sports/basketball/nba/statistics/byathlete?category=offensive&limit=100";
+
+        while (url) {
+            const response = await fetch(url);
+            const data = await response.json();
+
+            allPlayers.push(...data.athletes);
+
+            url = data.pagination.next;
+        }
+
+        console.log("TOTAL NBA PLAYERS:", allPlayers.length);
+console.log(
+    "ANTHONY EDWARDS:",
+    allPlayers.find(player =>
+        player.athlete.displayName.includes("Anthony Edwards")
+    )
+);
+
+    } catch (error) {
+        console.error("PLAYER LOADING ERROR:", error);
+    }
+}
+
+
+// DISPLAY NBA PLAYERS
+
+function displayNBAPlayers() {
+    const tableBody = document.getElementById("players-table-body");
+
+    tableBody.innerHTML = "";
+
+    const searchInput = document.getElementById("player-search");
+
+const searchTerm = searchInput.value.toLowerCase();
+
+const teamFilter = document.getElementById("team-filter");
+
+const selectedTeam = teamFilter.value;
+
+const playersToDisplay = allRosterPlayers.filter(player => {
+
+    const matchesSearch = player.displayName
+        .toLowerCase()
+        .includes(searchTerm);
+
+    const matchesTeam = selectedTeam === "all" ||
+        String(player.teamId) === selectedTeam;
+
+    return matchesSearch && matchesTeam;
+
+});
+
+playersToDisplay.forEach((player, index) => {
+
+    const athlete = player;
+    const stats = player.stats;
+
+    const general = stats ? stats.categories[0].values : [];
+    const offensive = stats ? stats.categories[1].values : [];
+    const defensive = stats ? stats.categories[2].values : [];
+
+    const row = document.createElement("tr");
+
+    row.innerHTML = `
+        <td>${index + 1}</td>
+        <td>${athlete.displayName}</td>
+        <td>${athlete.teamShortName || athlete.teamName || "—"}</td>
+        <td>${general[0] || 0}</td>
+        <td>${Number(offensive[0] || 0).toFixed(1)}</td>
+        <td>${Number(general[11] || 0).toFixed(1)}</td>
+        <td>${Number(offensive[10] || 0).toFixed(1)}</td>
+        <td>${Number(defensive[0] || 0).toFixed(1)}</td>
+        <td>${Number(defensive[1] || 0).toFixed(1)}</td>
+        <td>${Number(offensive[4] || 0).toFixed(1)}</td>
+        <td>${Number(offensive[3] || 0).toFixed(1)}%</td>
+<td>${Number(offensive[6] || 0).toFixed(1)}%</td>
+<td>${Number(offensive[9] || 0).toFixed(1)}%</td>
+    `;
+
+    tableBody.appendChild(row);
+
+});
+}
+
+
+// SORT PLAYERS BY STATISTIC
+
+function sortPlayers(stat) {
+
+    const statIndexes = {
+        points: [1, 0],
+        rebounds: [0, 11],
+        assists: [1, 10],
+        steals: [2, 0],
+        blocks: [2, 1],
+        threePointers: [1, 4],
+        fgPercentage: [1, 3],
+threePointPercentage: [1, 6],
+freeThrowPercentage: [1, 9]
+    };
+
+    const [categoryIndex, valueIndex] = statIndexes[stat];
+
+    allRosterPlayers = [...allRosterPlayers].sort((a, b) => {
+console.log("PLAYER COUNT:", allRosterPlayers.length);
+        const statsA = a.stats?.categories[categoryIndex]?.values[valueIndex] || 0;
+
+        const statsB = b.stats?.categories[categoryIndex]?.values[valueIndex] || 0;
+
+        return statsB - statsA;
+
+    });
+console.log("PLAYERS BEFORE DISPLAY:", allRosterPlayers.length);
+    displayNBAPlayers();
+
+    console.log("Sorted by:", stat);
+}
+
+
+// PLAYER SEARCH
+
+const playerSearch = document.getElementById("player-search");
+
+playerSearch.addEventListener("input", function() {
+    displayNBAPlayers();
+});
+const teamFilter = document.getElementById("team-filter");
+
+teamFilter.addEventListener("change", function() {
+    displayNBAPlayers();
+});
+// STATISTIC FILTER
+
+const statFilter = document.getElementById("stat-filter");
+
+statFilter.addEventListener("change", function() {
+    sortPlayers(statFilter.value);
+});
+
+
+// START LOADING PLAYER DATA
+
+async function startPlayerDatabase() {
+
+    await loadAllNBAPlayers();
+
+    await loadAllTeamRosters();
+sortPlayers("points");
+}
+
+startPlayerDatabase();

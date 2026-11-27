@@ -2,22 +2,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>NBA Central</title>
+    <title>COURTSIDE 360 | EVERY GAME. EVERY STORY. EVERY ANGLE.</title>
+    <link rel="icon" type="image/png" href="courtside-logo.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 id="home">Welcome to NBA Central</h1>
+    <header class="main-header">
 
-    <p>Your home for everything NBA!</p>
-    <nav>
+    <button id="menu-button">☰</button>
+
+    <img src="courtside-logo.png" alt="COURTSIDE 360 Logo" class="site-logo">
+
+    <p>EVERY GAME. EVERY STORY. EVERY ANGLE.</p>
+
+</header>
+
+<nav id="main-navigation">
     <a href="#home">HOME</a>
     <a href="#teams">TEAMS</a>
     <a href="#players">PLAYERS</a>
     <a href="#scores">SCORES</a>
     <a href="#standings">STANDINGS</a>
 </nav>
-<img src="nba.jpg" alt="NBA Basketball" width="100%">
+<div id="home-page">
+<section id="headlines-section">
+
+    <h2>📰 LATEST NBA HEADLINES</h2>
+
+    <div id="featured-headline">
+        <p>Loading top NBA story...</p>
+    </div>
+
+    <div id="headlines-container">
+        <p>Loading latest NBA news...</p>
+    </div>
+
+</section>
+<!-- NBA VIDEO HIGHLIGHTS -->
+
+<section id="video-highlights">
+
+    <h2>🎬 MUST-SEE FROM THE COURT</h2>
+
+    <div id="videos-container">
+        <p>Loading NBA highlights...</p>
+    </div>
+
+</section>
+<!-- TOP NBA HEADLINES -->
+
+<section id="top-headlines">
+
+    <h2>🔥 TOP NBA HEADLINES</h2>
+
+    <div id="top-headlines-container">
+        <p>Loading top headlines...</p>
+    </div>
+
+</section>
+</div>
+
+<section id="teams">
 <p id="last-updated">Last Updated: Waiting for data...</p>
 <p class="refresh-note">Standings automatically refresh every 5 minutes.</p>
 <input
@@ -57,6 +103,59 @@
     <div id="southeast-teams"></div>
 </details>
 </details>
+</section>
+<!-- PLAYERS PAGE -->
+
+<div id="players-page">
+
+    <h2>NBA Players</h2>
+
+    <p>Discover your favourite NBA players, their teams and statistics.</p>
+<input
+    type="text"
+    id="player-search"
+    placeholder="🔍 Search for an NBA player..."
+>
+<select id="stat-filter">
+    <option value="points">Points (PTS)</option>
+    <option value="rebounds">Rebounds (REB)</option>
+    <option value="assists">Assists (AST)</option>
+    <option value="steals">Steals (STL)</option>
+    <option value="blocks">Blocks (BLK)</option>
+    <option value="threePointers">3-Pointers (3PM)</option>
+</select>
+<select id="team-filter">
+    <option value="all">All NBA Teams</option>
+</select>
+    <div id="players-container">
+<table id="players-table">
+
+    <thead>
+    <tr>
+        <th>Rank</th>
+        <th>Player</th>
+        <th>Team</th>
+        <th>GP</th>
+        <th onclick="sortPlayers('points')">PTS ↕</th>
+        <th onclick="sortPlayers('rebounds')">REB ↕</th>
+        <th onclick="sortPlayers('assists')">AST ↕</th>
+        <th onclick="sortPlayers('steals')">STL ↕</th>
+        <th onclick="sortPlayers('blocks')">BLK ↕</th>
+        <th onclick="sortPlayers('threePointers')">3PM ↕</th>
+        <th onclick="sortPlayers('fgPercentage')">FG% ↕</th>
+<th onclick="sortPlayers('threePointPercentage')">3P% ↕</th>
+<th onclick="sortPlayers('freeThrowPercentage')">FT% ↕</th>
+    </tr>
+</thead>
+
+    <tbody id="players-table-body">
+    </tbody>
+
+</table>
+</div>
+
+</div>
+<div id="scores-page">
 <h2 id="scores">Latest NBA Scores</h2>
 <div>
     <details>
@@ -79,12 +178,13 @@
 </details>
 </details>
 </div>
+</div>
+<div id="standings-page">
 <h2 id="standings">NBA Standings</h2>
 <h3>Western Conference</h3>
 <div class="playoff-legend">
     <span class="legend-playoff">■ Playoff Positions (1–6)</span>
     <span class="legend-playin">■ Play-In Positions (7–10)</span>
-</div>
 </div>
 <button id="refresh-button">Refresh Standings 🔄</button>
 <details>
@@ -356,38 +456,8 @@
 </tr>
 </table>
 </details>
-<div>
-    <h3>Welcome to the 2026 NBA Season</h3>
-    <p>Follow your favourite teams and players throughout the season.</p>
 </div>
 
-<div>
-    <h3>Player Spotlight</h3>
-    <p>Discover the biggest stars in basketball.</p>
-</div>
-
-<footer>
-    <p>© 2026 NBA Central. All Rights Reserved.</p>
-    <p>Made for basketball fans 🏀</p>
-    <section id="customer-support">
-    <h2>📞 Contact NBA Central</h2>
-    <p>Have questions, suggestions or feedback? Get in touch with us.</p>
-
-    <p>
-        📧 Email Support:
-        <a href="mailto:burudidonald2005@gmail.com">
-            Send us an Email
-        </a>
-    </p>
-
-    <p>
-        💬 WhatsApp Support:
-        <a href="https://wa.me/254791412622" target="_blank">
-            Chat with us on WhatsApp
-        </a>
-    </p>
-</section>
-</footer>
 <script src="script.js"></script>
 </body>
 </html>
